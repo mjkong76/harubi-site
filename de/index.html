@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harubi — Haushaltsbuch per Kassenbon-Foto, ohne Bankzugang</title>
+<meta name="description" content="Haushaltsbuch-App für iPhone: Kassenbon oder Kontoauszug abfotografieren, Harubi liest Datum, Betrag und Händler direkt auf dem Gerät. Keine Bankverbindung, kein Konto, kein Tracking. Ausgaben und Fixkosten im Blick — kostenlos.">
+<link rel="canonical" href="https://mjkong76.github.io/harubi-site/de/">
+<link rel="alternate" hreflang="ko" href="https://mjkong76.github.io/harubi-site/ko/">
+<link rel="alternate" hreflang="en" href="https://mjkong76.github.io/harubi-site/en/">
+<link rel="alternate" hreflang="de" href="https://mjkong76.github.io/harubi-site/de/">
+<link rel="alternate" hreflang="x-default" href="https://mjkong76.github.io/harubi-site/en/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Harubi — Haushaltsbuch per Kassenbon-Foto, ohne Bankzugang">
+<meta property="og:description" content="Beleg fotografieren, fertig. Texterkennung läuft on-device, ohne Server, ohne Konto, ohne Werbung. Kostenlos.">
+<meta property="og:url" content="https://mjkong76.github.io/harubi-site/de/">
+<meta name="twitter:card" content="summary">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff; --fg: #1c1c1e; --muted: #6b6b72; --line: #e4e4ea;
+    --card: #f7f7f9; --accent: #4f46e5; --accent-ink: #ffffff; --mark: #eeecff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111114; --fg: #ececef; --muted: #9a9aa2; --line: #2b2b32;
+            --card: #191920; --accent: #7c8cff; --accent-ink: #101015; --mark: #23233a; }
+  }
+  :root[data-theme="light"] {
+    --bg: #ffffff; --fg: #1c1c1e; --muted: #6b6b72; --line: #e4e4ea;
+    --card: #f7f7f9; --accent: #4f46e5; --accent-ink: #ffffff; --mark: #eeecff;
+  }
+  :root[data-theme="dark"] {
+    --bg: #111114; --fg: #ececef; --muted: #9a9aa2; --line: #2b2b32;
+    --card: #191920; --accent: #7c8cff; --accent-ink: #101015; --mark: #23233a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 760px; margin: 0 auto; padding: 32px 20px 72px;
+    color: var(--fg); background: var(--bg);
+  }
+  nav { font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+  nav .brand { color: var(--fg); font-weight: 700; }
+  nav .langs { margin-left: auto; }
+  a { color: var(--accent); }
+  h1 { font-size: 32px; line-height: 1.25; margin: 28px 0 12px; letter-spacing: -0.02em; hyphens: auto; }
+  h2 { font-size: 21px; line-height: 1.35; margin: 44px 0 10px; letter-spacing: -0.01em; }
+  h3 { font-size: 16px; margin: 0 0 4px; }
+  p { margin: 0 0 14px; }
+  .lede { font-size: 18px; }
+  .sub { color: var(--muted); }
+  ul { padding-left: 20px; margin: 0 0 14px; }
+  li { margin-bottom: 6px; }
+  .cta { margin: 26px 0 8px; }
+  .btn {
+    display: inline-block; background: var(--accent); color: var(--accent-ink);
+    text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 10px;
+  }
+  .meta { font-size: 13px; color: var(--muted); margin-top: 10px; }
+  .cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); margin: 16px 0; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .card p { margin: 0; font-size: 15px; color: var(--muted); }
+  .hi { background: var(--mark); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin: 18px 0; }
+  .hi h2 { margin-top: 0; }
+  .q { font-weight: 600; margin: 20px 0 2px; }
+  .q + p { color: var(--muted); }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 44px 0 0; }
+  footer { margin-top: 24px; font-size: 14px; color: var(--muted); }
+  footer a { margin-right: 6px; }
+  .small { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">Harubi</span>
+  <span class="langs"><a href="../ko/">한국어</a> · <a href="../en/">English</a> · <strong>Deutsch</strong></span>
+</nav>
+
+<h1>Ein Haushaltsbuch, das beim Kassenbon anfängt — nicht bei Ihren Bankzugangsdaten</h1>
+<p class="lede">Harubi ist eine <strong>Haushaltsbuch-App für das iPhone</strong>. Sie fotografieren einen Beleg, einen Kontoauszug auf dem Bildschirm oder eine Zahlungsbestätigung, und Harubi liest Datum, Betrag und Händler heraus — vollständig auf Ihrem Gerät. Ohne Kontoanbindung, ohne Konto, ohne Werbung.</p>
+
+<div class="cta">
+  <a class="btn" href="https://apps.apple.com/app/id6790001483">Im App Store laden</a>
+  <div class="meta">Nur für iPhone · ab iOS 17 · kostenlos, ohne In-App-Käufe, Abo oder Werbung</div>
+</div>
+
+<h2>Ihre Daten bleiben auf Ihrem iPhone</h2>
+<p>Die meisten Finanz-Apps verlangen als Erstes Zugriff auf Ihr Konto. Harubi verlangt gar nichts, weil es nichts gibt, wohin Ihre Daten gehen könnten.</p>
+<ul>
+  <li><strong>Keine Kontoanbindung, kein Login, kein Benutzerkonto.</strong> Es gibt keine Registrierung, weil es keinen Server gibt, bei dem man sich registrieren könnte.</li>
+  <li><strong>Die Texterkennung läuft on-device</strong> über Apples Vision-Framework. Kein Cloud-OCR-Dienst, kein Upload, keine externe Schnittstelle.</li>
+  <li><strong>Null Analyse-SDKs, null Werbe-SDKs, null Fremdbibliotheken.</strong> Kein Tracking, keine Werbe-ID (IDFA).</li>
+  <li>Umsätze, Budgets und Vermögenswerte liegen ausschließlich in der App-Datenbank auf Ihrem Gerät (Apple SwiftData).</li>
+  <li>Ihre Belegfotos werden nach der Erkennung <strong>weder gespeichert noch versendet</strong>.</li>
+  <li>Für den Gerätewechsel exportieren Sie selbst eine <strong>JSON-Sicherungsdatei</strong> und spielen sie auf dem neuen iPhone wieder ein.</li>
+</ul>
+<p class="small">Die Einzelheiten stehen in der <a href="../">Datenschutzerklärung</a>.</p>
+
+<h2>Warum überhaupt fotografieren?</h2>
+<p><strong>Weil Sie die Belege ohnehin schon haben.</strong> Seit 2020 muss Ihnen jedes Geschäft mit elektronischer Kasse einen Beleg aushändigen. Diese Zettel sammeln sich in der Jackentasche und landen ungelesen im Papierkorb — dabei steht auf jedem einzelnen genau das, was ein Haushaltsbuch braucht: Datum, Summe, Händler.</p>
+<p><strong>Und weil Bargeld sonst unsichtbar bleibt.</strong> Apps mit Kontoanbindung können Bargeldausgaben systembedingt nicht erfassen: Am Geldautomaten sehen sie „Bargeldauszahlung 100 €“ und danach endet die Spur. Bäcker, Wochenmarkt, Trinkgeld, Kiosk — alles fällt aus der Statistik heraus. Ein abfotografierter Kassenbon schließt genau diese Lücke.</p>
+
+<h2>Drei Arten von Bildern, automatisch unterschieden</h2>
+<p class="sub">Sie müssen keinen Modus auswählen. Harubi erkennt selbst, was auf dem Bild zu sehen ist.</p>
+<div class="cards">
+  <div class="card">
+    <h3>Kassenbons</h3>
+    <p>Belege aus Supermarkt, Drogerie und Restaurant. Die Händlernamen der gängigen Ketten — REWE, Edeka, Lidl, Aldi, Kaufland, Penny, Rossmann — werden zuverlässig erkannt, auch wenn darüber ein Werbeslogan steht („Wir lieben Lebensmittel").</p>
+  </div>
+  <div class="card">
+    <h3>Umsatzlisten</h3>
+    <p>Ein Screenshot der Umsatzübersicht aus Ihrer Banking- oder Kreditkarten-App: Harubi liest viele Buchungen auf einmal.</p>
+  </div>
+  <div class="card">
+    <h3>Zahlungsbestätigungen</h3>
+    <p>Ein Screenshot der Bestätigungsnachricht, die nach einer Kartenzahlung eintrifft — Betrag, Händler und Uhrzeit.</p>
+  </div>
+</div>
+
+<div class="hi">
+<h2>Mehrere Screenshots werden zu einer sauberen Liste zusammengeführt</h2>
+<p>Ein ganzer Monat passt nie auf einen Bildschirm. Sie scrollen also und machen drei oder vier Screenshots — und die überlappen sich zwangsläufig. Übergeben Sie einfach alle auf einmal:</p>
+<ul>
+  <li><strong>Doppelte Buchungen werden über den Kontostand abgeglichen und entfernt</strong>, sodass keine Ausgabe zweimal im Haushaltsbuch landet.</li>
+  <li><strong>Zeilen ohne sichtbares Datum übernehmen das Datum von weiter oben</strong> — auch wenn ein Screenshot mitten in der Liste beginnt.</li>
+  <li><strong>Bereits gespeicherte Buchungen werden automatisch abgewählt</strong>, sodass Sie einen Zeitraum bedenkenlos noch einmal erfassen können.</li>
+</ul>
+<p>Das ist der Punkt, an dem das Nacharbeiten eines ganzen Monats überhaupt erst zumutbar wird.</p>
+</div>
+
+<h2>Gespeichert wird erst, wenn Sie es geprüft haben</h2>
+<p>Das Erkannte landet zunächst in einer Prüfansicht und nicht direkt im Haushaltsbuch. Betrag, Bezeichnung, Datum und Kategorie lassen sich antippen und korrigieren, einzelne Zeilen können Sie abwählen. Wenn Sie einen Screenshot aus einer anderen App an Harubi weitergeben, liegt er beim nächsten Öffnen der App zur Prüfung bereit.</p>
+
+<h2>Alles Weitere, was ein Haushaltsbuch braucht</h2>
+<ul>
+  <li><strong>Budgets</strong> je Kategorie, mit dem verbleibenden Betrag auf einen Blick.</li>
+  <li><strong>Auswertungen</strong> — ein Ringdiagramm der Ausgabenverteilung und eine Verlaufskurve über die Monate.</li>
+  <li><strong>Konten und Karten</strong> getrennt von Bargeld geführt.</li>
+  <li><strong>Fixkosten</strong> werden monatlich an einem von Ihnen festgelegten Tag automatisch gebucht — Miete, Abos, Versicherungen.</li>
+  <li><strong>Eigene Kategorien</strong>, benannt so, wie Sie über Ihr Geld denken.</li>
+  <li><strong>Sicherung und Wiederherstellung</strong> über eine JSON-Datei, die Ihnen gehört.</li>
+  <li><strong>KI-Zusammenfassungen und Kategorievorschläge on-device</strong> — ab iOS 26 auf Geräten mit Apple Intelligence (unterstützte Geräte).</li>
+</ul>
+
+<h2>Unterstützte Länder</h2>
+<p>Beleg- und Kontoauszugsformate werden für <strong>Deutschland, die USA, Südkorea, die Philippinen und Japan</strong> erkannt. Die Bedienoberfläche gibt es auf Deutsch, Englisch, Koreanisch und Filipino; als Währungen stehen Euro, US-Dollar, Won und Peso zur Verfügung.</p>
+
+<h2>Der Preis</h2>
+<p><strong>Vollständig kostenlos.</strong> Keine In-App-Käufe, kein Abo, keine Werbung, kein Tracking — und keine Funktion, die sich später als kostenpflichtig herausstellt.</p>
+<p class="sub">Beim Start prüft die App bei Apple, ob im App Store eine neuere Version vorliegt. Übermittelt werden dabei ausschließlich die Bundle-ID der App sowie Länder- und Sprachkennung — niemals Ihre Buchungen.</p>
+
+<div class="cta">
+  <a class="btn" href="https://apps.apple.com/app/id6790001483">Im App Store laden</a>
+</div>
+
+<h2>Häufige Fragen</h2>
+
+<p class="q">Muss ich mein Bankkonto verbinden?</p>
+<p>Nein. Harubi hat gar keine Funktion dafür. Statt Ihres Kontos liest die App Belege und Screenshots.</p>
+
+<p class="q">Werden meine Belegfotos hochgeladen?</p>
+<p>Nein. Die Erkennung findet auf Ihrem iPhone statt, das Bild wird danach weder gespeichert noch übertragen. Die einzige Ausnahme: Wenn Sie ein falsch erkanntes Bild ausdrücklich an den Entwickler melden möchten, öffnet sich ein vorbereiteter E-Mail-Entwurf, den Sie selbst absenden müssen.</p>
+
+<p class="q">Erfasst Harubi auch Bargeldausgaben?</p>
+<p>Ja, und das ist einer der Hauptgründe für die App. Fotografieren Sie den Kassenbon, und die Barzahlung steht genauso im Haushaltsbuch wie eine Kartenzahlung.</p>
+
+<p class="q">Was passiert, wenn etwas falsch erkannt wird?</p>
+<p>Sie korrigieren es in der Prüfansicht, bevor gespeichert wird. Jedes Feld lässt sich antippen.</p>
+
+<p class="q">Wie funktionieren Fixkosten?</p>
+<p>Sie legen Betrag, Kategorie und einen Tag im Monat fest; die Buchung wird ab dann jeden Monat an diesem Tag automatisch angelegt.</p>
+
+<p class="q">Wie wechsle ich auf ein neues iPhone?</p>
+<p>Unter „Mehr → Verwaltung → Datensicherung &amp; Wiederherstellung“ exportieren Sie eine JSON-Datei und spielen sie auf dem neuen Gerät wieder ein. Bitte beachten Sie: Fotos und Videos, die an Notizen angehängt sind, sowie die Einstellungen für Fixkosten sind in der Sicherungsdatei nicht enthalten. Beim Wiederherstellen werden die auf dem Gerät vorhandenen Daten ersetzt.</p>
+
+<p class="q">Gibt es eine Version für iPad oder Apple Watch?</p>
+<p>Derzeit nicht. Harubi läuft nur auf dem iPhone und setzt iOS 17 oder neuer voraus.</p>
+
+<p class="q">Ist es wirklich kostenlos?</p>
+<p>Ja. Es gibt nichts zu kaufen.</p>
+
+<hr>
+<footer>
+  <p><a href="https://apps.apple.com/app/id6790001483">App Store</a> · <a href="../">Datenschutzerklärung</a> · <a href="../support.html">Support</a> · <a href="mailto:mjkong76@gmail.com">mjkong76@gmail.com</a></p>
+  <p>Sprache: <a href="../ko/">한국어</a> · <a href="../en/">English</a> · <strong>Deutsch</strong></p>
+  <p>© 2026 Harubi</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Harubi",
+  "operatingSystem": "iOS 17.0 oder neuer",
+  "applicationCategory": "FinanceApplication",
+  "url": "https://mjkong76.github.io/harubi-site/de/",
+  "description": "Haushaltsbuch-App für das iPhone: Kassenbons, Umsatzlisten und Zahlungsbestätigungen werden per On-Device-Texterkennung ausgewertet. Ohne Kontoanbindung, ohne Benutzerkonto, ohne Tracking.",
+  "inLanguage": "de",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "de",
+  "mainEntity": [
+    { "@type": "Question", "name": "Muss ich mein Bankkonto verbinden?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nein. Harubi hat keine Funktion zur Kontoanbindung. Die App liest stattdessen Belege und Screenshots." } },
+    { "@type": "Question", "name": "Werden meine Belegfotos hochgeladen?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nein. Die Texterkennung läuft on-device über Apple Vision; das Bild wird danach weder gespeichert noch übertragen." } },
+    { "@type": "Question", "name": "Erfasst Harubi auch Bargeldausgaben?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ja. Fotografieren Sie den Kassenbon, dann wird die Barzahlung genauso erfasst wie eine Kartenzahlung. Apps mit Kontoanbindung können das systembedingt nicht." } },
+    { "@type": "Question", "name": "Ist es wirklich kostenlos?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ja. Es gibt keine In-App-Käufe, kein Abo und keine Werbung." } }
+  ]
+}
+</script>
+</body>
+</html>

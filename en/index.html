@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harubi — Free Budget App with a Receipt Scanner and No Bank Login</title>
+<meta name="description" content="Harubi is a free expense tracker for iPhone. Photograph a receipt, a bank or card statement screen, or a card approval text, and it reads the date, amount and merchant on-device. No bank login, no account, no subscription.">
+<link rel="canonical" href="https://mjkong76.github.io/harubi-site/en/">
+<link rel="alternate" hreflang="ko" href="https://mjkong76.github.io/harubi-site/ko/">
+<link rel="alternate" hreflang="en" href="https://mjkong76.github.io/harubi-site/en/">
+<link rel="alternate" hreflang="de" href="https://mjkong76.github.io/harubi-site/de/">
+<link rel="alternate" hreflang="x-default" href="https://mjkong76.github.io/harubi-site/en/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Harubi — Free Budget App with a Receipt Scanner and No Bank Login">
+<meta property="og:description" content="Take a picture of the receipt. Harubi reads it on your iPhone and fills in the entry. Free, no account, no bank connection.">
+<meta property="og:url" content="https://mjkong76.github.io/harubi-site/en/">
+<meta name="twitter:card" content="summary">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff; --fg: #1c1c1e; --muted: #6b6b72; --line: #e4e4ea;
+    --card: #f7f7f9; --accent: #4f46e5; --accent-ink: #ffffff; --mark: #eeecff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111114; --fg: #ececef; --muted: #9a9aa2; --line: #2b2b32;
+            --card: #191920; --accent: #7c8cff; --accent-ink: #101015; --mark: #23233a; }
+  }
+  :root[data-theme="light"] {
+    --bg: #ffffff; --fg: #1c1c1e; --muted: #6b6b72; --line: #e4e4ea;
+    --card: #f7f7f9; --accent: #4f46e5; --accent-ink: #ffffff; --mark: #eeecff;
+  }
+  :root[data-theme="dark"] {
+    --bg: #111114; --fg: #ececef; --muted: #9a9aa2; --line: #2b2b32;
+    --card: #191920; --accent: #7c8cff; --accent-ink: #101015; --mark: #23233a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 760px; margin: 0 auto; padding: 32px 20px 72px;
+    color: var(--fg); background: var(--bg);
+  }
+  nav { font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+  nav .brand { color: var(--fg); font-weight: 700; }
+  nav .langs { margin-left: auto; }
+  a { color: var(--accent); }
+  h1 { font-size: 32px; line-height: 1.25; margin: 28px 0 12px; letter-spacing: -0.02em; }
+  h2 { font-size: 21px; line-height: 1.35; margin: 44px 0 10px; letter-spacing: -0.01em; }
+  h3 { font-size: 16px; margin: 0 0 4px; }
+  p { margin: 0 0 14px; }
+  .lede { font-size: 18px; }
+  .sub { color: var(--muted); }
+  ul { padding-left: 20px; margin: 0 0 14px; }
+  li { margin-bottom: 6px; }
+  .cta { margin: 26px 0 8px; }
+  .btn {
+    display: inline-block; background: var(--accent); color: var(--accent-ink);
+    text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 10px;
+  }
+  .meta { font-size: 13px; color: var(--muted); margin-top: 10px; }
+  .cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); margin: 16px 0; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .card p { margin: 0; font-size: 15px; color: var(--muted); }
+  .hi { background: var(--mark); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin: 18px 0; }
+  .hi h2 { margin-top: 0; }
+  .q { font-weight: 600; margin: 20px 0 2px; }
+  .q + p { color: var(--muted); }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 44px 0 0; }
+  footer { margin-top: 24px; font-size: 14px; color: var(--muted); }
+  footer a { margin-right: 6px; }
+  .small { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">Harubi</span>
+  <span class="langs"><a href="../ko/">한국어</a> · <strong>English</strong> · <a href="../de/">Deutsch</a></span>
+</nav>
+
+<h1>A budget app that reads your receipts, not your bank account</h1>
+<p class="lede">Harubi is a <strong>free expense tracker for iPhone</strong>. Photograph a receipt, a statement screen, or a card approval text message, and it reads the date, amount and merchant on your device. No bank login. No account. No subscription.</p>
+
+<div class="cta">
+  <a class="btn" href="https://apps.apple.com/app/id6790001483">Get it on the App Store</a>
+  <div class="meta">iPhone only · iOS 17 or later · Free, with no in-app purchases, subscriptions or ads</div>
+</div>
+
+<h2>Why photograph anything?</h2>
+<p>Most budgeting apps in the US ask for two things before they will do anything: a monthly fee and your online banking credentials. YNAB, Copilot, Monarch and Rocket Money all work that way. That arrangement is fine until one of three things is true for you:</p>
+<ul>
+  <li><strong>You pay cash sometimes.</strong> A bank feed cannot see cash. The farmers market, the barber, splitting a bill — none of it shows up, and the categories quietly drift away from reality.</li>
+  <li><strong>You would rather not hand over banking credentials.</strong> A photograph asks nothing of your bank.</li>
+  <li><strong>You do not want another account.</strong> Harubi has no sign-up screen because there is no server to sign up to.</li>
+</ul>
+<p>A photograph covers all three. Everything you spend leaves a paper or a pixel trail: a receipt in your pocket, the transaction list in your banking app, the approval text that arrives seconds after you tap your card. Harubi's job is to turn that into a ledger entry so you do not have to type it.</p>
+
+<h2>It recognises three kinds of image, automatically</h2>
+<p class="sub">You do not pick a mode. Harubi works out what it is looking at.</p>
+<div class="cards">
+  <div class="card">
+    <h3>Receipts</h3>
+    <p>Store, restaurant and grocery receipts — date, total and merchant name. This is how cash spending gets recorded.</p>
+  </div>
+  <div class="card">
+    <h3>Bank &amp; card statements</h3>
+    <p>Screenshot the transaction list in your banking or card app and Harubi reads many rows in one pass.</p>
+  </div>
+  <div class="card">
+    <h3>Card approval texts</h3>
+    <p>A screenshot of the confirmation message your card issuer sends after a purchase — amount, merchant and time.</p>
+  </div>
+</div>
+
+<div class="hi">
+<h2>Several screenshots, merged into one clean list</h2>
+<p>A month of transactions never fits on one screen. So you scroll and capture three or four screenshots, and they always overlap. Hand all of them to Harubi at once and it will:</p>
+<ul>
+  <li><strong>Remove the duplicates by matching running balances</strong>, so an overlapping transaction is not imported twice.</li>
+  <li><strong>Carry the date down to rows that do not show one</strong>, so a capture that starts mid-list still lands on the right day.</li>
+  <li><strong>Untick anything you have already saved</strong>, so you can re-import a range you partly captured last week without thinking about it.</li>
+</ul>
+<p>This is the part that makes catching up on a whole month bearable, and it is the thing no receipt scanner we know of does.</p>
+</div>
+
+<h2>Nothing is saved until you have looked at it</h2>
+<p>What Harubi reads goes to a review screen first, never straight into your ledger. Tap any amount, description, date or category to correct it, and untick rows you do not want. Share a screenshot to Harubi from another app and it will be waiting for you the next time you open Harubi.</p>
+
+<h2>On-device, and that is not a marketing word</h2>
+<ul>
+  <li><strong>Recognition uses Apple's Vision framework on your iPhone.</strong> There is no recognition server, no cloud OCR API, no upload.</li>
+  <li><strong>No account and no bank connection.</strong> Nothing to breach, because nothing is held.</li>
+  <li><strong>Zero analytics SDKs, zero advertising SDKs, zero third-party dependencies.</strong> No IDFA, no tracking.</li>
+  <li>Transactions, budgets and assets live in the app's own database on your device (Apple SwiftData).</li>
+  <li>Moving to a new iPhone? Export a <strong>JSON backup file</strong> yourself and import it on the new device.</li>
+</ul>
+<p class="small">The details are in the <a href="../">privacy policy</a>.</p>
+
+<h2>The rest of the budget app</h2>
+<ul>
+  <li><strong>Budgets</strong> per category, with what is left clearly shown.</li>
+  <li><strong>Statistics</strong> — a donut chart of where the money went, and a trend graph across months.</li>
+  <li><strong>Accounts and cards</strong> tracked separately from cash.</li>
+  <li><strong>Recurring expenses</strong> posted automatically on a chosen day each month — rent, subscriptions, insurance.</li>
+  <li><strong>Editable categories</strong>, named the way you actually think about spending.</li>
+  <li><strong>Backup and restore</strong> via a JSON file you control.</li>
+  <li><strong>On-device AI summaries and category suggestions</strong> — on iOS 26 and Apple Intelligence supported devices.</li>
+</ul>
+
+<h2>Where it works</h2>
+<p>Receipt and statement formats are recognised for the <strong>United States, Germany, South Korea, the Philippines and Japan</strong>. The interface is available in English, German, Korean and Filipino, with USD, EUR, KRW and PHP as currencies.</p>
+
+<h2>The price</h2>
+<p><strong>Free. All of it.</strong> No in-app purchases, no subscription, no ads, no tracking, and no feature that turns out to be locked later.</p>
+<p class="sub">For completeness: on launch the app asks Apple whether a newer version is on the App Store. That request carries the app's bundle identifier plus a country and language code — never your transactions.</p>
+
+<div class="cta">
+  <a class="btn" href="https://apps.apple.com/app/id6790001483">Get it on the App Store</a>
+</div>
+
+<h2>Frequently asked questions</h2>
+
+<p class="q">Do I have to connect my bank?</p>
+<p>No, and you could not if you wanted to. Harubi has no bank connection feature. It reads receipts and screenshots instead.</p>
+
+<p class="q">Does it track cash spending?</p>
+<p>Yes — this is the main reason to use it. Photograph the receipt and the cash purchase is recorded like any other.</p>
+
+<p class="q">Are my receipt photos uploaded anywhere?</p>
+<p>No. Recognition happens on your iPhone and the image is not stored or sent afterwards. The single exception is if you choose to report a misread image to the developer: that opens a pre-filled mail draft that you must send yourself.</p>
+
+<p class="q">What if it reads something wrong?</p>
+<p>Correct it on the review screen before saving. Every field is tappable.</p>
+
+<p class="q">How do I move to a new iPhone?</p>
+<p>Settings → Management → Data backup &amp; restore exports a JSON file; import it on the new device. Note that photos and videos attached to memos, and recurring expense settings, are not included in the backup file, and restoring replaces the data already on the device.</p>
+
+<p class="q">Is there an iPad or Apple Watch version?</p>
+<p>Not at the moment. Harubi is iPhone-only and needs iOS 17 or later.</p>
+
+<p class="q">Is it really free?</p>
+<p>Yes. There is nothing to buy.</p>
+
+<hr>
+<footer>
+  <p><a href="https://apps.apple.com/app/id6790001483">App Store</a> · <a href="../">Privacy policy</a> · <a href="../support.html">Support</a> · <a href="mailto:mjkong76@gmail.com">mjkong76@gmail.com</a></p>
+  <p>Language: <a href="../ko/">한국어</a> · <strong>English</strong> · <a href="../de/">Deutsch</a></p>
+  <p>© 2026 Harubi</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Harubi",
+  "operatingSystem": "iOS 17.0 or later",
+  "applicationCategory": "FinanceApplication",
+  "url": "https://mjkong76.github.io/harubi-site/en/",
+  "description": "A free iPhone expense tracker that reads receipts, bank and card statement screenshots and card approval texts with on-device OCR. No bank login and no account.",
+  "inLanguage": "en",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    { "@type": "Question", "name": "Do I have to connect my bank?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Harubi has no bank connection feature at all. It reads receipts and screenshots instead." } },
+    { "@type": "Question", "name": "Does it track cash spending?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Photograph the receipt and the cash purchase is recorded like any other transaction, which a bank feed cannot do." } },
+    { "@type": "Question", "name": "Are my receipt photos uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Recognition happens on the device using Apple Vision, and the image is not stored or transmitted afterwards." } },
+    { "@type": "Question", "name": "Is it really free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. There are no in-app purchases, no subscription and no ads." } }
+  ]
+}
+</script>
+</body>
+</html>

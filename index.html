@@ -19,14 +19,17 @@
   ul { padding-left: 20px; }
   a { color: #4f46e5; } @media (prefers-color-scheme: dark) { a { color: #7c8cff; } }
   .lede { font-size: 17px; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 90%;
+         background: #8881; padding: 1px 5px; border-radius: 4px; }
   footer { margin-top: 48px; font-size: 13px; color: #8a8a8e; }
+  footer a { margin-right: 6px; }
 </style>
 </head>
 <body>
-  <nav><strong>하루비 Harubi</strong> · 개인정보 처리방침 · <a href="support.html">지원 Support</a></nav>
+  <nav><strong>하루비 Harubi</strong> · 개인정보 처리방침 · <a href="support.html">지원 Support</a> · <a href="ko/">소개</a> <a href="en/">EN</a> <a href="de/">DE</a></nav>
 
   <h1>개인정보 처리방침</h1>
-  <div class="eff">시행일: 2026년 7월 5일</div>
+  <div class="eff">시행일: 2026년 8월 4일</div>
   <p class="lede">하루비(이하 "앱")는 개인정보를 <strong>수집·전송하지 않습니다.</strong> 모든 데이터는 이용자의 기기 안에만 저장됩니다.</p>
 
   <h2>1. 수집하는 정보</h2>
@@ -38,41 +41,106 @@
   <h2>2. 카메라 및 사진 접근</h2>
   <ul>
     <li>카메라·사진 접근은 <strong>영수증·거래내역의 텍스트 인식(OCR)</strong> 목적에만 사용됩니다.</li>
-    <li>인식은 Apple 온디바이스 Vision으로 <strong>기기 내에서</strong> 처리되며, 이미지는 저장·전송되지 않습니다.</li>
+    <li>인식은 Apple 온디바이스 Vision으로 <strong>기기 내에서</strong> 처리되며, 인식을 위해 이미지를 외부로 전송하지 않습니다. 인식이 끝난 이미지는 앱에 저장되지 않습니다.</li>
+    <li>단 하나의 예외는 아래 3조의 <strong>인식 개선 제보</strong>이며, 이용자가 직접 실행하고 직접 전송하는 경우에만 해당합니다.</li>
   </ul>
 
-  <h2>3. 제3자 제공 및 광고</h2>
+  <h2>3. 인식 개선 제보(이용자가 선택한 경우에 한함)</h2>
   <ul>
-    <li>광고, 분석 도구, 제3자 추적(IDFA 등)을 사용하지 않습니다.</li>
+    <li>인식 결과가 좋지 않을 때, 이용자는 인식 화면의 <strong>「인식 개선에 도움을 주세요」</strong> 버튼을 눌러 개선용 샘플을 개발자에게 보낼 수 있습니다. <strong>선택 사항이며, 누르지 않으면 아무것도 전송되지 않습니다.</strong></li>
+    <li>버튼을 누르면 <strong>메일 작성 화면이 열릴 뿐</strong>이며, 여기에는 OCR로 읽어 낸 텍스트와 앱 버전·언어 코드가 본문에 담기고, <strong>이용자가 선택한 원본 이미지</strong>가 첨부됩니다.</li>
+    <li>실제 전송은 <strong>이용자가 메일 작성 화면에서 직접 전송 버튼을 눌렀을 때에만</strong> 이루어지며, 전송 전에 본문과 첨부 파일을 확인·수정하거나 작성을 취소할 수 있습니다. <strong>자동 전송이나 백그라운드 업로드는 없습니다.</strong></li>
+    <li>수신처는 개발자 메일 주소 <a href="mailto:easyharubi@gmail.com">easyharubi@gmail.com</a> 입니다. 제보받은 자료는 파싱 형식 개선 목적으로만 사용하며, 제3자에게 제공하지 않습니다.</li>
+    <li>메일 계정이 설정되어 있지 않은 기기에서는 iOS 공유 시트가 대신 열리며, 이 경우에도 보낼 곳과 전송 여부는 이용자가 정합니다.</li>
+  </ul>
+
+  <h2>4. 네트워크 사용</h2>
+  <ul>
+    <li>앱이 외부와 통신하는 경우는 <strong>App Store 최신 버전 확인 한 가지뿐</strong>입니다. 앱 실행 시 Apple의 <code>itunes.apple.com/lookup</code> 을 호출해 새 버전이 있는지 확인합니다.</li>
+    <li>이때 전달되는 값은 <strong>앱의 번들 ID, 국가 코드, 언어 코드</strong>뿐이며, 거래·예산·자산·메모 등 이용자 데이터는 포함되지 않습니다.</li>
+    <li>그 밖에 이용자 데이터를 서버로 보내는 통신은 없습니다.</li>
+  </ul>
+
+  <h2>5. 제3자 제공 및 광고</h2>
+  <ul>
+    <li>광고, 분석 도구, 제3자 추적(IDFA 등)을 사용하지 않습니다. 서드파티 SDK·라이브러리를 포함하지 않습니다.</li>
     <li>수집·저장하는 개인정보가 없으므로 제3자에게 제공하는 정보도 없습니다.</li>
   </ul>
 
-  <h2>4. 데이터 보관 및 삭제</h2>
+  <h2>6. 데이터 보관, 백업 및 삭제</h2>
   <ul>
     <li>모든 데이터는 기기에 저장되며, 앱을 삭제하면 함께 삭제됩니다.</li>
-    <li>서버 백업이 없으므로 기기 변경 시 데이터는 이전되지 않습니다.</li>
+    <li><strong>자동 동기화나 서버 백업은 없습니다.</strong> 개발자가 보관하는 이용자 데이터도 없습니다.</li>
+    <li>대신 <strong>이용자가 직접 백업 파일을 만들어 기기를 옮길 수 있습니다.</strong> 설정 → 관리 → <strong>「데이터 백업·복원」</strong> 에서 JSON 파일로 내보낸 뒤, 새 기기에서 그 파일을 가져오면 복원됩니다. 백업 파일은 이용자의 기기·클라우드 드라이브 등 이용자가 정한 위치에 저장되며, 개발자는 접근할 수 없습니다.</li>
+    <li>백업 파일에는 거래·분류·예산·자산·메모 본문이 포함됩니다. 다만 <strong>메모에 첨부한 사진·영상과 정기 지출 설정은 백업 파일에 포함되지 않습니다.</strong></li>
+    <li>복원을 실행하면 해당 기기에 있던 기존 데이터는 백업 파일의 내용으로 <strong>대체</strong>됩니다.</li>
   </ul>
 
-  <h2>5. 아동의 개인정보</h2>
+  <h2>7. 아동의 개인정보</h2>
   <p>앱은 개인정보를 수집하지 않으며 모든 연령이 사용할 수 있습니다.</p>
 
-  <h2>6. 문의</h2>
+  <h2>8. 문의</h2>
   <p>개인정보 관련 문의: <a href="mailto:mjkong76@gmail.com">mjkong76@gmail.com</a></p>
 
   <hr>
 
   <h1>Privacy Policy (English)</h1>
-  <div class="eff">Effective date: July 5, 2026</div>
-  <p class="lede">Harubi ("the App") does <strong>not collect or transmit</strong> any personal data. Everything stays on your device.</p>
+  <div class="eff">Effective date: August 4, 2026</div>
+  <p class="lede">Harubi ("the App") does <strong>not collect or transmit</strong> your personal data. Everything stays on your device.</p>
+
+  <h2>1. Information we collect</h2>
   <ul>
     <li>No account, login, or sign-up.</li>
-    <li>All data you enter (transactions, budgets, assets, memos) is stored <strong>only on your device</strong> (Apple SwiftData) and is never sent to any server.</li>
-    <li>Camera/Photos access is used solely for <strong>on-device text recognition (OCR)</strong> of receipts and statements; images are not stored or transmitted after recognition.</li>
-    <li>No ads, analytics, or third-party tracking (no IDFA).</li>
-    <li>Deleting the App removes all data. There is no server backup.</li>
+    <li>All data you enter (transactions, budgets, assets, memos) is stored <strong>only on your device</strong> (Apple SwiftData) and is never sent to any server. Neither the developer nor any third party can access it.</li>
   </ul>
+
+  <h2>2. Camera and Photos access</h2>
+  <ul>
+    <li>Camera/Photos access is used solely for <strong>on-device text recognition (OCR)</strong> of receipts and statements.</li>
+    <li>Recognition runs entirely on your device using Apple Vision; images are not uploaded for recognition and are not stored by the App afterwards.</li>
+    <li>The only exception is the recognition-improvement report described in section 3, which happens only when you choose to send it.</li>
+  </ul>
+
+  <h2>3. Recognition-improvement reports (only if you choose to send one)</h2>
+  <ul>
+    <li>When recognition goes wrong, you may tap <strong>"Help us improve recognition"</strong> on the recognition screen to send a sample to the developer. This is <strong>entirely optional — nothing is sent unless you tap it.</strong></li>
+    <li>Tapping the button only <strong>opens a pre-filled mail draft</strong>. The message body contains the text extracted by OCR plus the app version and language code, and <strong>the original image you selected</strong> is attached.</li>
+    <li>Nothing is transmitted until <strong>you press Send yourself</strong> in that mail draft. You can review or edit the body and attachments, or cancel the draft, before sending. <strong>There is no automatic or background upload.</strong></li>
+    <li>Reports go to the developer's address, <a href="mailto:easyharubi@gmail.com">easyharubi@gmail.com</a>, and are used only to improve parsing formats. They are not shared with third parties.</li>
+    <li>If no mail account is configured on the device, the iOS share sheet opens instead; you still decide where it goes and whether to send it at all.</li>
+  </ul>
+
+  <h2>4. Network usage</h2>
+  <ul>
+    <li>The App makes exactly one kind of network request: <strong>checking the App Store for a newer version</strong>. On launch it calls Apple's <code>itunes.apple.com/lookup</code>.</li>
+    <li>That request carries only the <strong>app's bundle identifier, a country code and a language code</strong>. It contains none of your transaction, budget, asset or memo data.</li>
+    <li>No other communication sends your data anywhere.</li>
+  </ul>
+
+  <h2>5. Third parties and advertising</h2>
+  <ul>
+    <li>No ads, analytics, or third-party tracking (no IDFA). The App contains no third-party SDKs or libraries.</li>
+    <li>Because no personal data is collected or stored, none is shared with third parties.</li>
+  </ul>
+
+  <h2>6. Retention, backup and deletion</h2>
+  <ul>
+    <li>All data lives on your device, and deleting the App deletes it.</li>
+    <li><strong>There is no automatic sync and no server backup</strong>, and the developer holds no copy of your data.</li>
+    <li>Instead, <strong>you can create a backup file yourself and carry it to a new device.</strong> Go to Settings → Management → <strong>Data backup &amp; restore</strong>, export a JSON file, and import that file on the new device. The file is saved wherever you choose (your device, your own cloud drive), and the developer cannot access it.</li>
+    <li>The backup file includes transactions, categories, budgets, assets and memo text. However, <strong>photos and videos attached to memos, and recurring-expense settings, are not included in the backup file.</strong></li>
+    <li>Restoring <strong>replaces</strong> the data already on that device with the contents of the backup file.</li>
+  </ul>
+
+  <h2>7. Children's privacy</h2>
+  <p>The App collects no personal data and is suitable for all ages.</p>
+
+  <h2>8. Contact</h2>
   <p>Contact: <a href="mailto:mjkong76@gmail.com">mjkong76@gmail.com</a></p>
 
-  <footer>© 2026 하루비 Harubi</footer>
+  <footer>
+    <p><a href="ko/">앱 소개(한국어)</a> · <a href="en/">About (English)</a> · <a href="de/">Über die App (Deutsch)</a> · <a href="support.html">지원 Support</a></p>
+    <p>© 2026 하루비 Harubi</p>
+  </footer>
 </body>
 </html>
