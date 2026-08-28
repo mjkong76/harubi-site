@@ -132,7 +132,7 @@
   <li><strong>No account and no bank connection.</strong> Nothing to breach, because nothing is held.</li>
   <li><strong>Zero analytics SDKs, zero advertising SDKs, zero third-party dependencies.</strong> No IDFA, no tracking.</li>
   <li>Transactions, budgets and assets live in the app's own database on your device (Apple SwiftData).</li>
-  <li>Moving to a new iPhone? Export a <strong>JSON backup file</strong> yourself and import it on the new device.</li>
+  <li>Moving to a new iPhone? Share a <strong>JSON backup file</strong> out yourself and restore from it on the new device.</li>
 </ul>
 <p class="small">The details are in the <a href="../">privacy policy</a>.</p>
 
@@ -172,8 +172,14 @@
 <p class="q">What if it reads something wrong?</p>
 <p>Correct it on the review screen before saving. Every field is tappable.</p>
 
+<!-- 유지 메모(날자 2026-08-28): 「메모 사진·영상 제외」는 다음 회차에 첨부 지키기가 들어가면 뒤집힌다 —
+     그때 이 문장과 앱 안 문면을 같이 고칠 것. 「정기 지출 설정 제외」는 사실이 아니어서 오늘 뺐다:
+     1.3.1(2026-08-05)부터 RecurringRule, 1.3.7 부터 InstallmentPlan 이 백업에 담긴다. -->
+<p class="q">Where are my backups kept?</p>
+<p>On this device. You can see the list under Settings → Management → ‘Back up &amp; restore your entries’, and they are removed together with Harubi if you delete the app. So use ‘Share a backup’ to save the file to the Files app or email it to yourself. When you change devices or reinstall the app, only a file you have shared can be used.</p>
+
 <p class="q">How do I move to a new iPhone?</p>
-<p>Settings → Management → Data backup &amp; restore exports a JSON file; import it on the new device. Note that photos and videos attached to memos, and recurring expense settings, are not included in the backup file, and restoring replaces the data already on the device.</p>
+<p>Nothing moves across on its own — you take the backup file with you. Share the file from your old iPhone, then tap ‘Restore’ in Harubi on the new one and pick that file; your entries come back as they were. Recurring expenses and installment plans are included. Photos and videos attached to memos are not, and restoring replaces the entries already on that device.</p>
 
 <p class="q">Is there an iPad or Apple Watch version?</p>
 <p>Not at the moment. Harubi is iPhone-only and needs iOS 17 or later.</p>
@@ -213,6 +219,10 @@
       "acceptedAnswer": { "@type": "Answer", "text": "Yes. Photograph the receipt and the cash purchase is recorded like any other transaction, which a bank feed cannot do." } },
     { "@type": "Question", "name": "Are my receipt photos uploaded anywhere?",
       "acceptedAnswer": { "@type": "Answer", "text": "No. Recognition happens on the device using Apple Vision, and the image is not stored or transmitted afterwards." } },
+    { "@type": "Question", "name": "Where are my backups kept?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On this device, and they are removed together with Harubi if you delete the app. Use Share a backup under Settings → Management → Back up and restore your entries to save the file to the Files app or email it to yourself. When you change devices or reinstall the app, only a file you have shared can be used." } },
+    { "@type": "Question", "name": "How do I move to a new iPhone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nothing moves across on its own. Share the backup file from your old iPhone, then tap Restore in Harubi on the new one and pick that file; your entries come back as they were. Recurring expenses and installment plans are included. Photos and videos attached to memos are not." } },
     { "@type": "Question", "name": "Is it really free?",
       "acceptedAnswer": { "@type": "Answer", "text": "Yes. There are no in-app purchases, no subscription and no ads." } }
   ]

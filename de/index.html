@@ -94,7 +94,7 @@
   <li><strong>Null Analyse-SDKs, null Werbe-SDKs, null Fremdbibliotheken.</strong> Kein Tracking, keine Werbe-ID (IDFA).</li>
   <li>Umsätze, Budgets und Vermögenswerte liegen ausschließlich in der App-Datenbank auf Ihrem Gerät (Apple SwiftData).</li>
   <li>Ihre Belegfotos werden nach der Erkennung <strong>weder gespeichert noch versendet</strong>.</li>
-  <li>Für den Gerätewechsel exportieren Sie selbst eine <strong>JSON-Sicherungsdatei</strong> und spielen sie auf dem neuen iPhone wieder ein.</li>
+  <li>Für den Gerätewechsel teilen Sie selbst eine <strong>JSON-Sicherungsdatei</strong> und stellen sie auf dem neuen iPhone wieder her.</li>
 </ul>
 <p class="small">Die Einzelheiten stehen in der <a href="../">Datenschutzerklärung</a>.</p>
 
@@ -172,8 +172,14 @@
 <p class="q">Wie funktionieren Fixkosten?</p>
 <p>Sie legen Betrag, Kategorie und einen Tag im Monat fest; die Buchung wird ab dann jeden Monat an diesem Tag automatisch angelegt.</p>
 
+<!-- 유지 메모(날자 2026-08-28): 「메모 사진·영상 제외」는 다음 회차에 첨부 지키기가 들어가면 뒤집힌다 —
+     그때 이 문장과 앱 안 문면을 같이 고칠 것. 「정기 지출 설정 제외」는 사실이 아니어서 오늘 뺐다:
+     1.3.1(2026-08-05)부터 RecurringRule, 1.3.7 부터 InstallmentPlan 이 백업에 담긴다. -->
+<p class="q">Wo werden meine Backups gespeichert?</p>
+<p>Auf diesem Gerät. Die Liste finden Sie unter „Mehr → Verwaltung → Einträge sichern &amp; wiederherstellen“. Wenn Sie Harubi löschen, werden die Backups mit gelöscht. Speichern Sie ein Backup deshalb über „Backup teilen“ in der Dateien-App oder schicken Sie es sich selbst per Mail. Bei Gerätewechsel oder Neuinstallation lässt sich nur eine Datei nutzen, die Sie geteilt haben.</p>
+
 <p class="q">Wie wechsle ich auf ein neues iPhone?</p>
-<p>Unter „Mehr → Verwaltung → Datensicherung &amp; Wiederherstellung“ exportieren Sie eine JSON-Datei und spielen sie auf dem neuen Gerät wieder ein. Bitte beachten Sie: Fotos und Videos, die an Notizen angehängt sind, sowie die Einstellungen für Fixkosten sind in der Sicherungsdatei nicht enthalten. Beim Wiederherstellen werden die auf dem Gerät vorhandenen Daten ersetzt.</p>
+<p>Nichts wandert von selbst mit — Sie nehmen die Backup-Datei selbst mit. Teilen Sie die Datei auf dem alten iPhone, tippen Sie auf dem neuen in Harubi auf „Wiederherstellen“ und wählen Sie diese Datei; Ihre Einträge sind dann wieder da. Fixkosten und Ratenzahlungen sind enthalten. Fotos und Videos, die an Notizen angehängt sind, dagegen nicht — und beim Wiederherstellen werden die auf dem Gerät vorhandenen Einträge ersetzt.</p>
 
 <p class="q">Gibt es eine Version für iPad oder Apple Watch?</p>
 <p>Derzeit nicht. Harubi läuft nur auf dem iPhone und setzt iOS 17 oder neuer voraus.</p>
@@ -213,6 +219,10 @@
       "acceptedAnswer": { "@type": "Answer", "text": "Nein. Die Texterkennung läuft on-device über Apple Vision; das Bild wird danach weder gespeichert noch übertragen." } },
     { "@type": "Question", "name": "Erfasst Harubi auch Bargeldausgaben?",
       "acceptedAnswer": { "@type": "Answer", "text": "Ja. Fotografieren Sie den Kassenbon, dann wird die Barzahlung genauso erfasst wie eine Kartenzahlung. Apps mit Kontoanbindung können das systembedingt nicht." } },
+    { "@type": "Question", "name": "Wo werden meine Backups gespeichert?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Auf diesem Gerät. Wenn Sie Harubi löschen, werden die Backups mit gelöscht. Speichern Sie ein Backup über Backup teilen unter Mehr → Verwaltung → Einträge sichern und wiederherstellen in der Dateien-App oder schicken Sie es sich selbst per Mail. Bei Gerätewechsel oder Neuinstallation lässt sich nur eine Datei nutzen, die Sie geteilt haben." } },
+    { "@type": "Question", "name": "Wie wechsle ich auf ein neues iPhone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nichts wandert von selbst mit. Teilen Sie die Backup-Datei auf dem alten iPhone, tippen Sie auf dem neuen in Harubi auf Wiederherstellen und wählen Sie diese Datei; Ihre Einträge sind dann wieder da. Fixkosten und Ratenzahlungen sind enthalten. Fotos und Videos, die an Notizen angehängt sind, nicht." } },
     { "@type": "Question", "name": "Ist es wirklich kostenlos?",
       "acceptedAnswer": { "@type": "Answer", "text": "Ja. Es gibt keine In-App-Käufe, kein Abo und keine Werbung." } }
   ]
